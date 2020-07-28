@@ -5,9 +5,11 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const postRoute = require("./routes/post");
 const PORT = process.env.PORT || 5000;
+const cors = require("cors");
 
 dotenv.config();
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/user", authRoute);
 app.use("/api/post", postRoute);
