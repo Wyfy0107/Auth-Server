@@ -49,11 +49,7 @@ router.post("/login", async (req, res) => {
 
   //create and return a token
   const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-  res
-    .header("auth-token", token)
-    .header("Access-Control-Allow-Origin", "https://jwt-api.netlify.app/Login")
-    .cookie("token", token)
-    .json({ token });
+  res.header("auth-token", token).cookie("token", token);
 });
 
 module.exports = router;
