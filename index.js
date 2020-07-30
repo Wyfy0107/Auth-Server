@@ -12,7 +12,6 @@ dotenv.config();
 app.use(
   cors({
     origin: "https://jwt-api.netlify.app/",
-    credentials: true,
   })
 );
 app.use(express.json());
